@@ -1,8 +1,9 @@
-package mar.sirenko.customer_order_manager;
+package mar.sirenko.customer_order_manager.profile;
 
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import mar.sirenko.customer_order_manager.client.Client;
 
 @Table(name = "profiles")
 @Entity
@@ -21,6 +22,6 @@ public class Profile {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "phone")
+    @Column(name = "phone", unique = true)
     private String phone;
 }

@@ -22,6 +22,8 @@ public class GlobalExceptionHandler {
 
         String errorCode = switch (e) {
             case AlreadyExistsException.Coupon c -> "COUPON_ALREADY_EXISTS";
+            case AlreadyExistsException.Profile p -> "PROFILE_ALREADY_EXISTS";
+
         };
 
         return new ErrorResponse(errorCode, e.getMessage());
@@ -34,6 +36,8 @@ public class GlobalExceptionHandler {
 
         String errorCode = switch (e) {
             case NotFoundException.Coupon c -> "COUPON_NOT_FOUND";
+            case NotFoundException.Profile p -> "PROFILE_NOT_FOUND";
+
         };
 
         return new ErrorResponse(errorCode, e.getMessage());
